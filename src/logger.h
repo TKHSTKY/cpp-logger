@@ -50,6 +50,8 @@ public:
     static bool IsEnabled(LogLevel level) {
         return Logger::Instance().isEnabled(level);
     }
+    static void AutoFlush(long interval) {}
+    static void Flush() {}
 
     std::shared_ptr<LogThread> Thread();
     void Log(LogLevel level, const char* file, uint32_t line, const char* fmt, ...);
